@@ -14,5 +14,13 @@ class income //доход
 		int prIdI; // id объекта дохода
 
 	public:
+
+		Income();
+		~Income();
+		void addIncome(Product&, int); // Создание объекта доходы
+		void addStructI(int); // Выделение памяти под объект дохода
+		void showI(); // Вывод таблицы доходов
+		void itSymm(); // Общая сумма доходов
+
 };
 #endif
