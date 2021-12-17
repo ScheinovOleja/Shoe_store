@@ -7,7 +7,7 @@
 
 using namespace std;
 
-float insymm;
+float insymm;  //переменная
 
 Income::Income() //конструктор
 {
@@ -15,7 +15,7 @@ Income::Income() //конструктор
 	prIdI = 0;
 }
 
-Income::~Income()  //дестуктор
+Income::~Income() //дестуктор
 {
 	delete[] ourIncome;
 }
@@ -66,8 +66,10 @@ void Income::addIncome(Product& objectPr, int amount) // Заполнение объекта стру
 				cout << "110Ноябрь" << endl;
 				cout << "12)Декабрь" << endl;
 				cout << "Выберите месяц: ";
+
 				cin >> mes;
 				switch (mes)
+
 				{
 					{
 				case 1:
@@ -144,5 +146,19 @@ void Income::addIncome(Product& objectPr, int amount) // Заполнение объекта стру
 		{
 			cout << "id товара не найден" << endl;
 		}
+	}
+
+	void Income::showI() // Вывод таблицы доходов
+	{
+		cout << setw(10) << "Jan" << setw(10) << "Feb" << setw(10) << "Mar" << setw(10) << "Apr" << setw(10) << "May" << setw(10) << "Jun" << setw(10) << "Jul" << setw(10) << "Aug" << setw(10) << "Sep" << setw(10) << "Oct" << setw(10) << "Nov" << setw(10) << "Dec" << endl;
+		cout << endl;
+		cout << endl;
+		cout << setw(10) << ourIncome[prIdI].Jan << setw(10) << ourIncome[prIdI].Feb << setw(10) << ourIncome[prIdI].Mar << setw(10) << ourIncome[prIdI].Apr << setw(10) << ourIncome[prIdI].May << setw(10) << ourIncome[prIdI].Jun << setw(10) << ourIncome[prIdI].Jul << setw(10) << ourIncome[prIdI].Aug << setw(10) << ourIncome[prIdI].Sep << setw(10) << ourIncome[prIdI].Oct << setw(10) << ourIncome[prIdI].Nov << setw(10) << ourIncome[prIdI].Dec << endl;
+	}
+
+	void Income::itSymm() // Общая сумма доходов
+	{
+		insymm = 0;
+		insymm = ourIncome[prIdI].Jan + ourIncome[prIdI].Feb + ourIncome[prIdI].Mar + ourIncome[prIdI].Apr + ourIncome[prIdI].May + ourIncome[prIdI].Jun + ourIncome[prIdI].Jul + ourIncome[prIdI].Aug + ourIncome[prIdI].Sep + ourIncome[prIdI].Oct + ourIncome[prIdI].Nov + ourIncome[prIdI].Dec;
 	}
 
