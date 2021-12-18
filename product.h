@@ -17,7 +17,7 @@ public:
 	void recopyProd(int); // Присваивание измененных данных объектов структур
 	void addStruct(int); // Выделение памяти под объект структуры
 	void addStructProd1(int); // Выделение памяти под временый объект структуры
-	void addProd(int); // Создание объекта товара
+	void addProduct(int); // Создание объекта товара
 	void showProd(int); // Вывод товара
 	void editProd(int); // Редактирование товара
 	void leftoversSum(int); // Сумма остатков
