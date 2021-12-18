@@ -5,23 +5,23 @@ using namespace std;
 
 struct itreport // Структура данных категорий расходов
 {
-	float JKX; // ЖКХ
-	float remont; // Ремонт
-	float reklama; // Реклама
-	float straxovka; // Страховка
-	float nalog; // Налог на недвижимость
-	float prinadlej; // Принадлежности
-	float zakyp; // Закупка
-	float symmaP; // Общая сумма доходов
+	float HCS; // ЖКХ
+	float rapair; // Ремонт
+	float advert; // Реклама
+	float unsurance; // Страховка
+	float tax; // Налог на недвижимость
+	float accessor; // Принадлежности
+	float purchase; // Закупка
+	float sumProd; // Общая сумма доходов
 };
 
 struct product1 // Структура данных о товарах
 {
 	unsigned short int id;
-	float kolvo; // Количество товара
+	float count; // Количество товара
 	float price; // Цена товара
 	string name; // Наименование товара
-	string vid; // Вид товара
+	string view; // Вид товара
 };
 
 struct income1 // Структура данных о доходах
@@ -34,7 +34,7 @@ struct expenses1 // Структура данных о расходах
 {
 	string data; // Месяц 
 	string recipient; // Получатель
-	float symm; // Сумма расхода
+	float sum; // Сумма расхода
 	string categories; // Категория расходов
 };
 
