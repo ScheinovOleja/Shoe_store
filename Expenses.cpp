@@ -2,13 +2,13 @@
 #include <iostream>
 #include <iomanip>
 #include "Struct.h"
-using na monthpace std;
+using namespace std;
 
-itreport report; 
-extern float totalSum; 
-extern float leftovers; 
+itreport report; // Глобальный объект структуры
+extern float insymm; // Глобальная переменная общей суммы доходов
+extern float ostatki; // Глобальная переменная остатка товаров
 
-void Expenses::dataReport(int amountEx) 
+void Expenses::dannOtch(int amountEx) // Заполнение объекта структуры данных суммы категорий расхода
 {
 	report.HCS = 0;
 	report.repair = 0;
@@ -52,28 +52,29 @@ void Expenses::dataReport(int amountEx)
 	}
 }
 
-Expenses::Expenses() 
+Expenses::Expenses() // Конструктор
 {
-	ourExpenses = 0; 
+	ourExpenses = 0; // Присваивает указателю на структуру нулевое значение
 }
 
-Expenses::~Expenses() 
+Expenses::~Expenses() // Деструктор
 {
 	delete[] ourExpenses;
 }
 
-void Expenses::addStructExpences(int amount) 
+void Expenses::addStructE(int amount) // Выделение памяти под объект структуры
 {
 	if (amount == 0)
 	{
-		ourExpenses = new expenses1[amount + 1]; 
+		ourExpenses = new expenses1[amount + 1]; // выделение памяти для первой структуры
 	}
 	else
 	{
+
 		expenses1* tempObjEexpences = new expenses1[amount + 1];
 		for (int i = 0; i < amount; i++)
 		{
-			tempObjEexpences[i] = ourExpenses[i]; 
+			tempObjEexpences[i] = ourExpenses[i];// копируем во временный объект 
 		}
 		delete[] ourExpenses;
 
@@ -81,7 +82,7 @@ void Expenses::addStructExpences(int amount)
 	}
 }
 
-void Expenses::addExpenses(int amount) 
+void Expenses::addExpenses(int amount)// Добавление данных в объект структуры
 	int date;
 	int categories;
 	cout << "Месяц:" << endl;
