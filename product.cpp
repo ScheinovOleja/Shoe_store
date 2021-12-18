@@ -3,15 +3,15 @@
 #include "Struct.h"
 using namespace std;
 
-float leftovers;
+float leftovers; // переменная остатки
 
-Product::Product()
+Product::Product() // конструктор
 {
 	ourProduct = 0;
 	prodId = 0;
 }
 
-Product::~Product()
+Product::~Product() // деструктор
 {
 	delete[] ourProduct;
 }
@@ -21,7 +21,7 @@ void Product::leftoversSum(int amount) // Сумма остатков товара
 	leftovers = 0;
 	for (int i = 0; i < amount; i++)
 	{
-		leftovers = leftovers + (ourProduct[i].kolvo * ourProduct[i].price);
+		leftovers = leftovers + (ourProduct[i].count * ourProduct[i].price); // суммирование остатков всех товаров
 	}
 }
 
@@ -33,8 +33,8 @@ void Product::copyProd(int amount) // Копирование данных основного объекта струк
 	{
 		ourProduct1[i].id = ourProduct[i].id;
 		ourProduct1[i].name = ourProduct[i].name;
-		ourProduct1[i].vid = ourProduct[i].vid;
-		ourProduct1[i].kolvo = ourProduct[i].kolvo;
+		ourProduct1[i].view = ourProduct[i].view;
+		ourProduct1[i].count = ourProduct[i].count;
 		ourProduct1[i].price = ourProduct[i].price;
 
 	}
@@ -46,8 +46,8 @@ void Product::recopyProd(int amount) // Копируем измененные данные временного об
 	{
 		ourProduct[i].id = ourProduct1[i].id;
 		ourProduct[i].name = ourProduct1[i].name;
-		ourProduct[i].vid = ourProduct1[i].vid;
-		ourProduct[i].kolvo = ourProduct1[i].kolvo;
+		ourProduct[i].view = ourProduct1[i].view;
+		ourProduct[i].count = ourProduct1[i].count;
 		ourProduct[i].price = ourProduct1[i].price;
 
 	}
@@ -105,10 +105,10 @@ void Product::addProduct(int amount) // Заполняем объект структуры
 	cin >> ourProduct[amount].name;
 	cout << endl;
 	cout << "Введите вид товара: ";
-	cin >> ourProduct[amount].vid;
+	cin >> ourProduct[amount].view;
 	cout << endl;
 	cout << "Введите количество товарв: ";
-	cin >> ourProduct[amount].kolvo;
+	cin >> ourProduct[amount].count;
 	cout << endl;
 	cout << "Введите цену товара: ";
 	cin >> ourProduct[amount].price;
@@ -123,8 +123,8 @@ void Product::showProd(int amount) // Вывод объектов структуры
 		cout
 			<< "id " << ourProduct[i].id << '\n'
 			<< "Наименование товара: " << ourProduct[i].name << '\n'
-			<< "Вид товара: " << ourProduct[i].vid << '\n'
-			<< "Количество товара: " << ourProduct[i].kolvo << '\n'
+			<< "Вид товара: " << ourProduct[i].view << '\n'
+			<< "Количество товара: " << ourProduct[i].count << '\n'
 			<< "Цена товара: " << ourProduct[i].price << '\n'
 			<< "=================================\n";
 	}
@@ -193,7 +193,7 @@ void Product::editProd(int amount) // Редактирование объета структуры
 			{
 				cout << "Введите новый вид товара: ";
 				cin >> review;
-				ourProduct[i].vid = review;
+				ourProduct[i].view = review;
 				cout << "Вид товара изменен" << endl;
 				check = false;
 			}
@@ -218,7 +218,7 @@ void Product::editProd(int amount) // Редактирование объета структуры
 			{
 				cout << "Введите новое количество товара: ";
 				cin >> recount;
-				ourProduct[i].kolvo = recount;
+				ourProduct[i].count = recount;
 				cout << "Количество товара изменено" << endl;
 				check = false;
 			}
