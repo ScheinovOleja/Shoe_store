@@ -18,8 +18,8 @@ class income //доход
 		Income();
 		~Income();
 		void addIncome(Product&, int); // Создание объекта доходы
-		void addStructI(int); // Выделение памяти под объект дохода
-		void showI(); // Вывод таблицы доходов
+		void addStructIncome(int); // Выделение памяти под объект дохода
+		void showIncome(); // Вывод таблицы доходов
 		void totalIncomeSum(); // Общая сумма доходов
 
 };
