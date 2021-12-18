@@ -11,7 +11,7 @@ class income //доход
 {
 	private:
 		income1* ourIncome; // Указатель на структуру доходы
-		int prIdI; // id объекта дохода
+		int prodId; // id объекта дохода
 
 	public:
 
@@ -20,7 +20,7 @@ class income //доход
 		void addIncome(Product&, int); // Создание объекта доходы
 		void addStructI(int); // Выделение памяти под объект дохода
 		void showI(); // Вывод таблицы доходов
-		void itSymm(); // Общая сумма доходов
+		void totalIncomeSum(); // Общая сумма доходов
 
 };
 #endif

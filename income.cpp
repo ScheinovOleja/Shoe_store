@@ -7,20 +7,21 @@
 
 using namespace std;
 
-float insymm;  //переменная
+float totalSum;  //переменная
 
 Income::Income() //конструктор
 {
 	ourIncome = 0; //присваиваем указателю на структуру нулевое значение
-	prIdI = 0;
+	prodId = 0;
 }
+
 
 Income::~Income() //дестуктор
 {
 	delete[] ourIncome;
 }
 
-void Income::addStructI(int amount) //выделение памят под объект структуры
+void Income::addStructIncome(int amount) //выделение памят под объект структуры
 {
 	ourIncome = new income1[amount + 1]; //выделение памяти для первой структуры
 }
@@ -28,29 +29,29 @@ void Income::addStructI(int amount) //выделение памят под объект структуры
 void Income::addIncome(Product& objectPr, int amount) // Заполнение объекта структуры
 {
 
-	int mes, idtov;
-	float kolvotov;
-	float symm;
-	bool proverka = true;
+	int month, idProd;
+	float countProd;
+	float sum;
+	bool check = true;
 	objectPr.showP(amount);
 	cout << "Введите id товара: ";
-	cin >> idtov;
+	cin >> idProd;
 	cout << "Введите количество товара: ";
-	cin >> kolvotov;
+	cin >> countProd;
 	for (int i = 0; i < amount; i++)
 	{
-		if (idtov == objectPr.ourProduct1[i].id) // Существует ли такой товар
+		if (idProd == objectPr.ourProduct1[i].id) // Существует ли такой товар
 		{
-			if (kolvotov > objectPr.ourProduct1[i].kolvo) // Хватает ли количества товаров
+			if (countProd > objectPr.ourProduct1[i].count) // Хватает ли количества товаров
 			{
 				cout << "Недостаточно товара" << endl;
 				return;
 			}
 			else {
-				objectPr.ourProduct1[i].kolvo = objectPr.ourProduct1[i].kolvo - kolvotov; // Изменение количества товара
-				symm = kolvotov * objectPr.ourProduct1[i].price; // Авторасчет суммы продаваемого товара
-				cout << "Сумма дохода: " << symm << endl;
-				proverka = false;
+				objectPr.ourProduct1[i].count = objectPr.ourProduct1[i].count - countProd; // Изменение количества товара
+				sum = countProd * objectPr.ourProduct1[i].price; // Авторасчет суммы продаваемого товара
+				cout << "Сумма дохода: " << sum << endl;
+				check = false;
 
 				cout << endl;
 				cout << "1)Январь" << endl;
@@ -67,69 +68,69 @@ void Income::addIncome(Product& objectPr, int amount) // Заполнение объекта стру
 				cout << "12)Декабрь" << endl;
 				cout << "Выберите месяц: ";
 
-				cin >> mes;
-				switch (mes)
+				cin >> month;
+				switch (month)
 
 				{
 					{
 				case 1:
 				{
-					ourIncome[prIdI].Jan = symm + ourIncome[prIdI].Jan;
+					ourIncome[prIdI].Jan = sum + ourIncome[prIdI].Jan;
 					break;
 				}
 				case 2:
 				{
-					ourIncome[prIdI].Feb = symm + ourIncome[prIdI].Feb;
+					ourIncome[prIdI].Feb = sum + ourIncome[prIdI].Feb;
 					break;
 				}
 				case 3:
 				{
-					ourIncome[prIdI].Mar = symm + ourIncome[prIdI].Mar;
+					ourIncome[prIdI].Mar = sum + ourIncome[prIdI].Mar;
 					break;
 				}
 				case 4:
 				{
-					ourIncome[prIdI].Apr = symm + ourIncome[prIdI].Apr;
+					ourIncome[prIdI].Apr = sum + ourIncome[prIdI].Apr;
 					break;
 				}
 				case 5:
 				{
-					ourIncome[prIdI].May = symm + ourIncome[prIdI].May;
+					ourIncome[prIdI].May = sum + ourIncome[prIdI].May;
 					break;
 				}
 				case 6:
 				{
-					ourIncome[prIdI].Jun = symm + ourIncome[prIdI].Jun;
+					ourIncome[prIdI].Jun = sum + ourIncome[prIdI].Jun;
 					break;
 				}
 				case 7:
 				{
-					ourIncome[prIdI].Jul = symm + ourIncome[prIdI].Jul;
+					ourIncome[prIdI].Jul = sum + ourIncome[prIdI].Jul;
 					break;
 				}
 				case 8:
 				{
-					ourIncome[prIdI].Aug = symm + ourIncome[prIdI].Aug;
+					ourIncome[prIdI].Aug = sum + ourIncome[prIdI].Aug;
 					break;
 				}
 				case 9:
 				{
-					ourIncome[prIdI].Sep = symm + ourIncome[prIdI].Sep;
+					ourIncome[prIdI].Sep = sum + ourIncome[prIdI].Sep;
 					break;
 				}
 				case 10:
 				{
-					ourIncome[prIdI].Oct = symm + ourIncome[prIdI].Oct;
+					ourIncome[prIdI].Oct = sum + ourIncome[prIdI].Oct;
 					break;
 				}
 				case 11:
 				{
-					ourIncome[prIdI].Nov = symm + ourIncome[prIdI].Nov;
+					ourIncome[prIdI].Nov = sum + ourIncome[prIdI].Nov;
 					break;
 				}
 				case 12:
 				{
-					ourIncome[prIdI].Dec = symm + ourIncome[prIdI].Dec;
+					ourIncome[prIdI].Dec = sum + ourIncome[prIdI].Dec;
 					break;
 				}
 				system("pause");
@@ -142,13 +143,13 @@ void Income::addIncome(Product& objectPr, int amount) // Заполнение объекта стру
 			}
 		}
 
-		if (proverka == true)
+		if (check == true)
 		{
 			cout << "id товара не найден" << endl;
 		}
 	}
 
-	void Income::showI() // Вывод таблицы доходов
+	void Income::showIncome() // Вывод таблицы доходов
 	{
 		cout << setw(10) << "Jan" << setw(10) << "Feb" << setw(10) << "Mar" << setw(10) << "Apr" << setw(10) << "May" << setw(10) << "Jun" << setw(10) << "Jul" << setw(10) << "Aug" << setw(10) << "Sep" << setw(10) << "Oct" << setw(10) << "Nov" << setw(10) << "Dec" << endl;
 		cout << endl;
@@ -156,9 +157,9 @@ void Income::addIncome(Product& objectPr, int amount) // Заполнение объекта стру
 		cout << setw(10) << ourIncome[prIdI].Jan << setw(10) << ourIncome[prIdI].Feb << setw(10) << ourIncome[prIdI].Mar << setw(10) << ourIncome[prIdI].Apr << setw(10) << ourIncome[prIdI].May << setw(10) << ourIncome[prIdI].Jun << setw(10) << ourIncome[prIdI].Jul << setw(10) << ourIncome[prIdI].Aug << setw(10) << ourIncome[prIdI].Sep << setw(10) << ourIncome[prIdI].Oct << setw(10) << ourIncome[prIdI].Nov << setw(10) << ourIncome[prIdI].Dec << endl;
 	}
 
-	void Income::itSymm() // Общая сумма доходов
+	void Income::totalIncomeSum() // Общая сумма доходов
 	{
-		insymm = 0;
-		insymm = ourIncome[prIdI].Jan + ourIncome[prIdI].Feb + ourIncome[prIdI].Mar + ourIncome[prIdI].Apr + ourIncome[prIdI].May + ourIncome[prIdI].Jun + ourIncome[prIdI].Jul + ourIncome[prIdI].Aug + ourIncome[prIdI].Sep + ourIncome[prIdI].Oct + ourIncome[prIdI].Nov + ourIncome[prIdI].Dec;
+		totalSum = 0;
+		totalSum = ourIncome[prIdI].Jan + ourIncome[prIdI].Feb + ourIncome[prIdI].Mar + ourIncome[prIdI].Apr + ourIncome[prIdI].May + ourIncome[prIdI].Jun + ourIncome[prIdI].Jul + ourIncome[prIdI].Aug + ourIncome[prIdI].Sep + ourIncome[prIdI].Oct + ourIncome[prIdI].Nov + ourIncome[prIdI].Dec;
 	}
 
