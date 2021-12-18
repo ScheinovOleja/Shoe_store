@@ -64,7 +64,7 @@ void Income::addIncome(Product& objectPr, int amount) // Заполнение объекта стру
 				cout << "8) Август" << endl;
 				cout << "9) Сентябрь" << endl;
 				cout << "10) Октябрь" << endl;
-				cout << "110 Ноябрь" << endl;
+				cout << "11) Ноябрь" << endl;
 				cout << "12) Декабрь" << endl;
 				cout << "Выберите месяц: ";
 
