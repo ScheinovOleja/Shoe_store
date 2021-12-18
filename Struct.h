@@ -6,7 +6,7 @@ using namespace std;
 struct itreport // Структура данных категорий расходов
 {
 	float HCS; // ЖКХ
-	float rapair; // Ремонт
+	float repair; // Ремонт
 	float advert; // Реклама
 	float unsurance; // Страховка
 	float tax; // Налог на недвижимость
