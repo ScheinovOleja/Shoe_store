@@ -250,11 +250,11 @@ void Expenses::purchase(Product& objectPr, int& amountPr, int amountEx) // Закуп
 		{
 			cout << "Введите количество: ";
 			cin >> prodCount;
-			objectPr.ourProduct1[i].kolvo = objectPr.ourProduct1[i].count + prodCount; // Добавляем количество товаров
+			objectPr.ourProduct1[i].count = objectPr.ourProduct1[i].count + prodCount; // Добавляем количество товаров
 			check = false;
 		}
 	}
-	if (check == true) // Если переменная proverka = true, значит, что товара нет и мы создаем новый
+	if (check == true) // Если переменная chek = true, значит, что товара нет и мы создаем новый
 	{
 		objectPr.addStructPr1(amountPr); // Выделение памяти под временный объект структуры
 		objectPr.addStruct(amountPr); // Выделение памяти под основной объект структуры
