@@ -359,5 +359,21 @@ void Expenses::purchase(Product& objectPr, int& amountPr, int amountEx) // Закуп
 	ourExpenses[amountEx].categories = "Закупки";
 
 }
+void Expenses::annualReport() // Вывод годового отчета
+{
+	cout << "Расход" << endl;
+	cout << "	ЖКХ: " << report.HCS << endl;
+	cout << "	Ремонт: " << report.repair << endl;
+	cout << "	Реклама: " << report.advert << endl;
+	cout << "	Страховка: " << report.insurance << endl;
+	cout << "	Налог на недвижимость: " << report.tax << endl;
+	cout << "	Принадлежности: " << report.accessor << endl;
+	cout << "	Сумма: " << report.sumProd << endl;
+	cout << "Доход" << endl;
+	cout << "	Сумма: " << totalSum << endl;
+	cout << "Остатки" << endl;
+	cout << "	Сумма: " << leftovers << endl;
+
+}
 
 
