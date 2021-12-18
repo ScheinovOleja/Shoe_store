@@ -28,7 +28,12 @@ public:
 
 	void showExpences(int); // Вывод таблицы расходы
 
-	
+	void purchare(Product&, int&, int); // Закупки
+
+	void annualReport(); // Вывод годового отчета
+
+	void dataReport(int); // Формирование данных для годового отчета
+
 
 };
 
