@@ -5,10 +5,10 @@
 using namespace std;
 
 itreport report; // Глобальный объект структуры
-extern float insymm; // Глобальная переменная общей суммы доходов
-extern float ostatki; // Глобальная переменная остатка товаров
+extern float  totalSum; // Глобальная переменная общей суммы доходов
+extern float  leftovers; // Глобальная переменная остатка товаров
 
-void Expenses::dannOtch(int amountEx) // Заполнение объекта структуры данных суммы категорий расхода
+void Expenses::dataReport(int amountEx) // Заполнение объекта структуры данных суммы категорий расхода
 {
 	report.HCS = 0;
 	report.repair = 0;
@@ -62,7 +62,7 @@ Expenses::~Expenses() // Деструктор
 	delete[] ourExpenses;
 }
 
-void Expenses::addStructE(int amount) // Выделение памяти под объект структуры
+void Expenses::addStructExpences(int amount) // Выделение памяти под объект структуры
 {
 	if (amount == 0)
 	{
@@ -223,6 +223,141 @@ void Expenses::addExpenses(int amount)// Добавление данных в объект структуры
 		break;
 
 	}
+}
+
+void Expenses::showExpences(int amount) // Вывод таблицы расходов
+{
+	cout << setw(10) << "Месяц " << setw(25) << "Получатель" << setw(25) << "Сумма" << setw(25) << "Категории" << endl;
+	cout << "--------------------------------------------------------------------------------------" << endl;
+	for (int i = 0; i < amount; i++)
+	{
+		cout << setw(10) << ourExpenses[i].data << setw(25) << ourExpenses[i].recipient << setw(25) << ourExpenses[i].sum << setw(25) << ourExpenses[i].categories << endl;
+		cout << "--------------------------------------------------------------------------------------" << endl;
+	}
+}
+
+void Expenses::purchase(Product& objectPr, int& amountPr, int amountEx) // Закупка товаров
+{
+	string prodName;
+	int prodCount;
+	int date;
+	bool check = true;
+	cout << "Введите название товара: ";
+	cin >> prodName;
+	for (int i = 0; i < amountPr; i++)
+	{
+		if (prodName == objectPr.ourProduct1[i].name) // Проверка, существует ли товар
+		{
+			cout << "Введите количество: ";
+			cin >> prodCount;
+			objectPr.ourProduct1[i].kolvo = objectPr.ourProduct1[i].count + prodCount; // Добавляем количество товаров
+			check = false;
+		}
+	}
+	if (check == true) // Если переменная proverka = true, значит, что товара нет и мы создаем новый
+	{
+		objectPr.addStructPr1(amountPr); // Выделение памяти под временный объект структуры
+		objectPr.addStruct(amountPr); // Выделение памяти под основной объект структуры
+		objectPr.ourProduct1[amountPr].name = prodName;
+		cout << "Введите вид:  ";
+		cin >> objectPr.ourProduct1[amountPr].view;
+		cout << "Введите количество: ";
+		cin >> objectPr.ourProduct1[amountPr].count;
+		cout << "Введите цену товара для продажи: ";
+		cin >> objectPr.ourProduct1[amountPr].price;
+		amountPr++;
+	}
+
+	cout << "Месяц:" << endl;
+	cout << "1. Январь" << endl;
+	cout << "2. Февраль" << endl;
+	cout << "3. Март" << endl;
+	cout << "4. Апрель" << endl;
+	cout << "5. Май" << endl;
+	cout << "6. Июнь" << endl;
+	cout << "7. Июль" << endl;
+	cout << "8. Август" << endl;
+	cout << "9. Сентябрь" << endl;
+	cout << "10. Октябрь" << endl;
+	cout << "11. Ноябрь" << endl;
+	cout << "12. Декабрь" << endl;
+	cout << "Выберите месяц: ";
+	cin >> date;
+	switch (date)
+	{
+	case 1:
+	{
+		ourExpenses[amountEx].data = "Январь";
+		break;
+	}
+	case 2:
+	{
+		ourExpenses[amountEx].data = "Февраль";
+		break;
+	}
+	case 3:
+	{
+		ourExpenses[amountEx].data = "Март";
+		break;
+	}
+	case 4:
+	{
+		ourExpenses[amountEx].data = "Апрель";
+		break;
+	}
+	case 5:
+	{
+		ourExpenses[amountEx].data = "Май";
+		break;
+	}
+	case 6:
+	{
+		ourExpenses[amountEx].data = "Июнь";
+		break;
+	}
+	case 7:
+	{
+		ourExpenses[amountEx].data = "Июль";
+		break;
+	}
+	case 8:
+	{
+		ourExpenses[amountEx].data = "Август";
+		break;
+	}
+	case 9:
+	{
+		ourExpenses[amountEx].data = "Сентябрь";
+		break;
+	}
+	case 10:
+	{
+		ourExpenses[amountEx].data = "Октябрь";
+		break;
+	}
+	case 11:
+	{
+		ourExpenses[amountEx].data = "Ноябрь";
+		break;
+	}
+	case 12:
+	{
+		ourExpenses[amountEx].data = "Декабрь";
+		break;
+	}
+	system("pause");
+	default:
+		cout << "Месяц не найден" << endl;
+		break;
+	}
+	cout << endl;
+
+	cout << "Введите получателя: ";
+	cin >> ourExpenses[amountEx].recipient;
+	cout << "Введите сумму расхода: ";
+	cin >> ourExpenses[amountEx].sum;
+	ourExpenses[amountEx].categories = "Закупки";
+
 }
 
 
