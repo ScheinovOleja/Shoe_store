@@ -7,16 +7,16 @@
 
 using namespace std;
 
-float totalSum;  //переменная
+float totalSum;  //переменная для итоговой суммы
 
-Income::Income() //конструктор
+Income::Income() //Конструктор
 {
 	ourIncome = 0; //присваиваем указателю на структуру нулевое значение
-	prodId = 0;
+	prodId = 0; //ID продукта
 }
 
 
-Income::~Income() //дестуктор
+Income::~Income() //Дестуктор
 {
 	delete[] ourIncome;
 }
@@ -33,7 +33,7 @@ void Income::addIncome(Product& objectPr, int amount) // Заполнение объекта стру
 	float countProd;
 	float sum;
 	bool check = true;
-	objectPr.showP(amount);
+	objectPr.showProd(amount);
 	cout << "Введите id товара: ";
 	cin >> idProd;
 	cout << "Введите количество товара: ";
