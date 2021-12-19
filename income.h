@@ -7,14 +7,13 @@
 
 using namespace std;
 
-class income //доход
+class Income //доход
 {
 	private:
 		income1* ourIncome; // Указатель на структуру доходы
 		int prodId; // id объекта дохода
 
 	public:
-
 		Income();
 		~Income();
 		void addIncome(Product&, int); // Создание объекта доходы

@@ -13,42 +13,42 @@ void Expenses::dataReport(int amountEx) // Заполнение объекта структуры данных с
 	report.HCS = 0;
 	report.repair = 0;
 	report.advert = 0;
-	report.insurance = 0;
+	report.unsurance = 0;
 	report.tax = 0;
 	report.accessor = 0;
-	report.purchasease = 0;
+	report.purchase = 0;
 	for (int i = 0; i < amountEx; i++)
 	{
-		if (ourExpenses[i].categoriesories == "ЖКХ")
+		if (ourExpenses[i].categories == "ЖКХ")
 		{
 			report.HCS = ourExpenses[i].sum + report.HCS;
 		}
-		if (ourExpenses[i].categoriesories == "Ремонт")
+		if (ourExpenses[i].categories == "Ремонт")
 		{
 			report.repair = ourExpenses[i].sum + report.repair;
 		}
-		if (ourExpenses[i].categoriesories == "Реклама")
+		if (ourExpenses[i].categories == "Реклама")
 		{
 			report.advert = ourExpenses[i].sum + report.advert;
 		}
-		if (ourExpenses[i].categoriesories == "Страховка")
+		if (ourExpenses[i].categories == "Страховка")
 		{
-			report.insurance = ourExpenses[i].sum + report.insurance;
+			report.unsurance = ourExpenses[i].sum + report.unsurance;
 		}
-		if (ourExpenses[i].categoriesories == "Налог на недвижимость")
+		if (ourExpenses[i].categories == "Налог на недвижимость")
 		{
 			report.tax = ourExpenses[i].sum + report.tax;
 		}
-		if (ourExpenses[i].categoriesories == "Принадлежности")
+		if (ourExpenses[i].categories == "Принадлежности")
 		{
 			report.accessor = ourExpenses[i].sum + report.accessor;
 		}
-		if (ourExpenses[i].categoriesories == "Закупки")
+		if (ourExpenses[i].categories == "Закупки")
 		{
-			report.purchasease = ourExpenses[i].sum + report.purchasease;
+			report.purchase = ourExpenses[i].sum + report.purchase;
 		}
 
-		report.sumProd = report.HCS + report.repair + report.advert + report.insurance + report.tax + report.accessor;
+		report.sumProd = report.HCS + report.repair + report.advert + report.unsurance + report.tax + report.accessor;
 	}
 }
 
@@ -82,7 +82,7 @@ void Expenses::addStructExpences(int amount) // Выделение памяти под объект стру
 	}
 }
 
-void Expenses::addExpenses(int amount)// Добавление данных в объект структуры
+void Expenses::addExpenses(int amount){// Добавление данных в объект структуры
 	int date;
 	int categories;
 	cout << "Месяц:" << endl;
@@ -189,32 +189,32 @@ void Expenses::addExpenses(int amount)// Добавление данных в объект структуры
 	{
 	case 1:
 	{
-		ourExpenses[amount].categoriesories = "ЖКХ";
+		ourExpenses[amount].categories = "ЖКХ";
 		break;
 	}
 	case 2:
 	{
-		ourExpenses[amount].categoriesories = "Налог на недвижимость";
+		ourExpenses[amount].categories = "Налог на недвижимость";
 		break;
 	}
 	case 3:
 	{
-		ourExpenses[amount].categoriesories = "Страховка";
+		ourExpenses[amount].categories = "Страховка";
 		break;
 	}
 	case 4:
 	{
-		ourExpenses[amount].categoriesories = "Принадлежности";
+		ourExpenses[amount].categories = "Принадлежности";
 		break;
 	}
 	case 5:
 	{
-		ourExpenses[amount].categoriesories = "Ремонт";
+		ourExpenses[amount].categories = "Ремонт";
 		break;
 	}
 	case 6:
 	{
-		ourExpenses[amount].categoriesories = "Реклама";
+		ourExpenses[amount].categories = "Реклама";
 		break;
 	}
 	system("pause");
@@ -256,7 +256,7 @@ void Expenses::purchase(Product& objectPr, int& amountPr, int amountEx) // Закуп
 	}
 	if (check == true) // Если переменная chek = true, значит, что товара нет и мы создаем новый
 	{
-		objectPr.addStructPr1(amountPr); // Выделение памяти под временный объект структуры
+		objectPr.addStructProd1(amountPr); // Выделение памяти под временный объект структуры
 		objectPr.addStruct(amountPr); // Выделение памяти под основной объект структуры
 		objectPr.ourProduct1[amountPr].name = prodName;
 		cout << "Введите вид:  ";
@@ -365,7 +365,7 @@ void Expenses::annualReport() // Вывод годового отчета
 	cout << "	ЖКХ: " << report.HCS << endl;
 	cout << "	Ремонт: " << report.repair << endl;
 	cout << "	Реклама: " << report.advert << endl;
-	cout << "	Страховка: " << report.insurance << endl;
+	cout << "	Страховка: " << report.unsurance << endl;
 	cout << "	Налог на недвижимость: " << report.tax << endl;
 	cout << "	Принадлежности: " << report.accessor << endl;
 	cout << "	Сумма: " << report.sumProd << endl;

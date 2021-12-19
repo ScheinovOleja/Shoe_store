@@ -17,7 +17,7 @@ int main()
 	Product objectPr; // Создаем объект класса Product
 	Income objectIn; // Создаем объект класса Income
 	Expenses objectEx; // Создаем объект класса Expenses
-	int productAmount = 0; // Присваиваем количество товара 
+	int productAmount = 0; // Присваиваем количестgfhво товара 
 	int incomeAmount = 0;
 	int expensesAmount = 0;
 	objectIn.addStructIncome(incomeAmount);
@@ -50,7 +50,7 @@ int main()
 		case  4:
 			objectEx.addStructExpences(expensesAmount);
 			objectPr.copyProd(productAmount);
-			objectEx.purchare(objectPr, productAmount, expensesAmount);
+			objectEx.purchase(objectPr, productAmount, expensesAmount);
 			objectPr.recopyProd(productAmount);
 			expensesAmount++;
 			break;
@@ -95,11 +95,11 @@ int main()
 			cout << endl;
 			break;
 		case  7:
-			objectEx.showEexpences(expensesAmount);
+			objectEx.showExpences(expensesAmount);
 			break;
 		case  8:
 			objectEx.dataReport(expensesAmount);
-			objectIn.totalSum();
+			objectIn.totalIncomeSum();
 			objectPr.leftoversSum(productAmount);
 			objectEx.annualReport();
 			break;

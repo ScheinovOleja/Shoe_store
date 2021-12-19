@@ -26,9 +26,7 @@ void Income::addStructIncome(int amount) //выделение памят под объект структуры
 	ourIncome = new income1[amount + 1]; //выделение памяти для первой структуры
 }
 
-void Income::addIncome(Product& objectPr, int amount) // Заполнение объекта структуры
-{
-
+void Income::addIncome(Product& objectPr, int amount) { // Заполнение объекта структуры
 	int month, idProd;
 	float countProd; //количество товара
 	float sum;
@@ -148,6 +146,7 @@ void Income::addIncome(Product& objectPr, int amount) // Заполнение объекта стру
 			cout << "id товара не найден" << endl;
 		}
 	}
+}
 
 	void Income::showIncome() // Вывод таблицы доходов
 	{
