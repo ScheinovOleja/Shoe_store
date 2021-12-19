@@ -17,7 +17,7 @@ void Expenses::dataReport(int amountEx) // Заполнение объекта структуры данных с
 	report.tax = 0;
 	report.accessor = 0;
 	report.purchase = 0;
-	for (int i = 0; i < amountEx; i++)
+	for (int i = 0; i < amountEx; i++) // Вычисление суммы для годового отчета.
 	{
 		if (ourExpenses[i].categories == "ЖКХ")
 		{
@@ -182,7 +182,7 @@ void Expenses::addExpenses(int amount){// Добавление данных в объект структуры
 	cout << "4. Принадлежности" << endl;
 	cout << "5. Ремонт" << endl;
 	cout << "6. Реклама" << endl;
-	cout << "Введите номер категорию: ";
+	cout << "Введите номер категории: ";
 	cin >> categories;
 
 	switch (categories)
@@ -254,7 +254,7 @@ void Expenses::purchase(Product& objectPr, int& amountPr, int amountEx) // Закуп
 			check = false;
 		}
 	}
-	if (check == true) // Если переменная chek = true, значит, что товара нет и мы создаем новый
+	if (check == true) // Если переменная cheсk = true, значит, что товара нет и мы создаем новый
 	{
 		objectPr.addStructProd1(amountPr); // Выделение памяти под временный объект структуры
 		objectPr.addStruct(amountPr); // Выделение памяти под основной объект структуры

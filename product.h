@@ -9,7 +9,7 @@ class Product  // Товар
 private:
 	int prodId; // id товара
 	product1* ourProduct; // Указатель на структуру товары
-public:
+public:	// Объявление функций
 	product1* ourProduct1; // Временный указатель на структуру, который очистится 
 	Product(); // Конструктор
 	~Product(); // Деструктор
