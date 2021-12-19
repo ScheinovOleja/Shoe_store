@@ -33,7 +33,6 @@ void Product::copyProd(int amount) // Копирование данных основного объекта струк
 	{
 		ourProduct1[i].id = ourProduct[i].id;
 		ourProduct1[i].name = ourProduct[i].name;
-		ourProduct1[i].view = ourProduct[i].view;
 		ourProduct1[i].count = ourProduct[i].count;
 		ourProduct1[i].price = ourProduct[i].price;
 
@@ -46,7 +45,6 @@ void Product::recopyProd(int amount) // Копируем измененные данные временного об
 	{
 		ourProduct[i].id = ourProduct1[i].id;
 		ourProduct[i].name = ourProduct1[i].name;
-		ourProduct[i].view = ourProduct1[i].view;
 		ourProduct[i].count = ourProduct1[i].count;
 		ourProduct[i].price = ourProduct1[i].price;
 
@@ -104,10 +102,7 @@ void Product::addProduct(int amount) // Заполняем объект структуры
 	cout << "Введите название товара: ";
 	cin >> ourProduct[amount].name;
 	cout << endl;
-	cout << "Введите вид товара: ";
-	cin >> ourProduct[amount].view;
-	cout << endl;
-	cout << "Введите количество товарв: ";
+	cout << "Введите количество товара: ";
 	cin >> ourProduct[amount].count;
 	cout << endl;
 	cout << "Введите цену товара: ";
@@ -123,7 +118,6 @@ void Product::showProd(int amount) // Вывод объектов структуры
 		cout
 			<< "id " << ourProduct[i].id << '\n'
 			<< "Наименование товара: " << ourProduct[i].name << '\n'
-			<< "Вид товара: " << ourProduct[i].view << '\n'
 			<< "Количество товара: " << ourProduct[i].count << '\n'
 			<< "Цена товара: " << ourProduct[i].price << '\n'
 			<< "=================================\n";
@@ -139,11 +133,9 @@ void Product::editProd(int amount) // Редактирование объета структуры
 	cout << "|---------------------------|" << endl;
 	cout << "|1. Наименование            |" << endl;
 	cout << "|---------------------------|" << endl;
-	cout << "|2. Вид                     |" << endl;
+	cout << "|2. Количество              |" << endl;
 	cout << "|---------------------------|" << endl;
-	cout << "|3. Количество              |" << endl;
-	cout << "|---------------------------|" << endl;
-	cout << "|4. Цена                    |" << endl;
+	cout << "|3. Цена                    |" << endl;
 	cout << "|---------------------------|" << endl;
 	cout << "|0. Вернуться в меню        |" << endl;
 	cout << "|---------------------------|" << endl;
@@ -181,31 +173,6 @@ void Product::editProd(int amount) // Редактирование объета структуры
 	}
 	case 2:
 	{
-		string review;
-		bool check = true;
-		showProd(amount);
-		cout << "Введите id товара: ";
-		cin >> id_editable;
-		cout << endl;
-		for (int i = 0; i < amount; i++)
-		{
-			if (id_editable == ourProduct[i].id)
-			{
-				cout << "Введите новый вид товара: ";
-				cin >> review;
-				ourProduct[i].view = review;
-				cout << "Вид товара изменен" << endl;
-				check = false;
-			}
-		}
-		if (check == true)
-		{
-			cout << "id не найден" << endl;
-		}
-		break;
-	}
-	case 3:
-	{
 		float recount;
 		bool check = true;
 		showProd(amount);
@@ -229,7 +196,7 @@ void Product::editProd(int amount) // Редактирование объета структуры
 		}
 		break;
 	}
-	case 4:
+	case 3:
 	{
 		float reprice;
 		bool check = true;

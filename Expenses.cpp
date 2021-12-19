@@ -259,8 +259,6 @@ void Expenses::purchase(Product& objectPr, int& amountPr, int amountEx) // Закуп
 		objectPr.addStructProd1(amountPr); // Выделение памяти под временный объект структуры
 		objectPr.addStruct(amountPr); // Выделение памяти под основной объект структуры
 		objectPr.ourProduct1[amountPr].name = prodName;
-		cout << "Введите вид:  ";
-		cin >> objectPr.ourProduct1[amountPr].view;
 		cout << "Введите количество: ";
 		cin >> objectPr.ourProduct1[amountPr].count;
 		cout << "Введите цену товара для продажи: ";

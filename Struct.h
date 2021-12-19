@@ -21,7 +21,6 @@ struct product1 // Структура данных о товарах
 	float count; // Количество товара
 	float price; // Цена товара
 	string name; // Наименование товара
-	string view; // Вид товара
 };
 
 struct income1 // Структура данных о доходах
