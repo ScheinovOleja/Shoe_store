@@ -3,7 +3,7 @@
 #include "Expenses.h"
 #include "function.h"
 #include <iostream>
-#include <windows.h>
+#include <Windows.h>
 
 using namespace std;
 
@@ -12,7 +12,7 @@ int main() {
     setlocale(LC_ALL, "rus");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    int a;
+    int item;
     Product objectPr; // Создаем объект класса Product
     Income objectIn; // Создаем объект класса Income
     Expenses objectEx; // Создаем объект класса Expenses
@@ -23,10 +23,10 @@ int main() {
 
     do { // Цикл меню программы
         menu(); // Вызов функции, отвечающей выводу основного меню программы
-        cin >> a;
+        cin >> item;
         system("cls"); // Очистка экрана
 
-        switch (a) {
+        switch (item) {
             case 1: {
                 objectPr.addStruct(productAmount); // Вызов метода объекта класса Product
                 objectPr.addProduct(productAmount);
@@ -53,12 +53,12 @@ int main() {
                 break;
             case 5: {
 
-                int deistvie;
+                int action;
                 punkt5(); // Вызов функции, отвечающей за вывод меню действия с товарами
-                cin >> deistvie;
+                cin >> action;
                 system("cls");
 
-                switch (deistvie) {
+                switch (action) {
                     case 1: {
                         if (productAmount != 0) {
                             objectPr.showProd(productAmount);
@@ -102,7 +102,6 @@ int main() {
         }
         system("pause");
         system("cls");
-    } while (a != 0); // Условие выхода из цикла
-
+    } while (item != 0); // Условие выхода из цикла
     return 0;
 }
