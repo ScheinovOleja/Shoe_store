@@ -38,7 +38,7 @@ int main()
             }
 
             case  2:
-                objectEx.addStructExpences(expensesAmount);  //Вызов метода объекта класса Expenses
+                objectEx.addStructExpenses(expensesAmount);  //Вызов метода объекта класса Expenses
                 objectEx.addExpenses(expensesAmount);
                 expensesAmount++;
                 break;
@@ -48,7 +48,7 @@ int main()
                 objectPr.recopyProd(productAmount);
                 break;
             case  4:
-                objectEx.addStructExpences(expensesAmount);
+                objectEx.addStructExpenses(expensesAmount);
                 objectPr.copyProd(productAmount);
                 objectEx.purchase(objectPr, productAmount, expensesAmount);
                 objectPr.recopyProd(productAmount);
@@ -95,7 +95,7 @@ int main()
                 cout << endl;
                 break;
             case  7:
-                objectEx.showExpences(expensesAmount);
+                objectEx.showExpenses(expensesAmount);
                 break;
             case  8:
                 objectEx.dataReport(expensesAmount);
