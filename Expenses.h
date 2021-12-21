@@ -3,24 +3,23 @@
 #define __EXPENSES_H__
 
 #include "Struct.h"
-
-#include "Product.h"
+#include "product.h"
 
 using namespace std;
 
-class Expenses // Расход
+class Expenses // пїЅпїЅпїЅпїЅпїЅпїЅ
 {
 private:
-	expenses1* ourExpenses; // Указатель на структуру расходы
+	expenses1* ourExpenses; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 public:
-	Expenses();	// Конструктор
-	~Expenses(); // Деструктор
-	void addStructExpences(int); // Выделить память под объект структуры товара
-	void addExpenses(int); // Создать объект структуры товара
-	void showExpences(int); // Вывод таблицы расходы
-	void purchase(Product&, int&, int); // Закупки
-	void annualReport(); // Вывод годового отчета
-	void dataReport(int); // Формирование данных для годового отчета
+	Expenses();	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	~Expenses(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	void addStructExpenses(int); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+	void addExpenses(int); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+	void showExpenses(int); // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	void purchase(Product&, int&, int); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	void annualReport(); // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+	void dataReport(int); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 };
 
 #endif

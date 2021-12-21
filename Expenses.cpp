@@ -4,11 +4,11 @@
 #include "Struct.h"
 using namespace std;
 
-itreport report; // Глобальный объект структуры
-extern float  totalSum; // Глобальная переменная общей суммы доходов
-extern float  leftovers; // Глобальная переменная остатка товаров
+itreport report; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+extern float  totalSum; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+extern float  leftovers; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-void Expenses::dataReport(int amountEx) // Заполнение объекта структуры данных суммы категорий расхода
+void Expenses::dataReport(int amountEx) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	report.HCS = 0;
 	report.repair = 0;
@@ -17,33 +17,33 @@ void Expenses::dataReport(int amountEx) // Заполнение объекта структуры данных с
 	report.tax = 0;
 	report.accessor = 0;
 	report.purchase = 0;
-	for (int i = 0; i < amountEx; i++) // Вычисление суммы для годового отчета.
+	for (int i = 0; i < amountEx; i++) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.
 	{
-		if (ourExpenses[i].categories == "ЖКХ")
+		if (ourExpenses[i].categories == "пїЅпїЅпїЅ")
 		{
 			report.HCS = ourExpenses[i].sum + report.HCS;
 		}
-		if (ourExpenses[i].categories == "Ремонт")
+		if (ourExpenses[i].categories == "пїЅпїЅпїЅпїЅпїЅпїЅ")
 		{
 			report.repair = ourExpenses[i].sum + report.repair;
 		}
-		if (ourExpenses[i].categories == "Реклама")
+		if (ourExpenses[i].categories == "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 		{
 			report.advert = ourExpenses[i].sum + report.advert;
 		}
-		if (ourExpenses[i].categories == "Страховка")
+		if (ourExpenses[i].categories == "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 		{
 			report.unsurance = ourExpenses[i].sum + report.unsurance;
 		}
-		if (ourExpenses[i].categories == "Налог на недвижимость")
+		if (ourExpenses[i].categories == "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 		{
 			report.tax = ourExpenses[i].sum + report.tax;
 		}
-		if (ourExpenses[i].categories == "Принадлежности")
+		if (ourExpenses[i].categories == "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 		{
 			report.accessor = ourExpenses[i].sum + report.accessor;
 		}
-		if (ourExpenses[i].categories == "Закупки")
+		if (ourExpenses[i].categories == "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 		{
 			report.purchase = ourExpenses[i].sum + report.purchase;
 		}
@@ -52,182 +52,182 @@ void Expenses::dataReport(int amountEx) // Заполнение объекта структуры данных с
 	}
 }
 
-Expenses::Expenses() // Конструктор
+Expenses::Expenses() // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
-	ourExpenses = 0; // Присваивает указателю на структуру нулевое значение
+	ourExpenses = 0; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 }
 
-Expenses::~Expenses() // Деструктор
+Expenses::~Expenses() // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	delete[] ourExpenses;
 }
 
-void Expenses::addStructExpences(int amount) // Выделение памяти под объект структуры
+void Expenses::addStructExpenses(int amount) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	if (amount == 0)
 	{
-		ourExpenses = new expenses1[amount + 1]; // выделение памяти для первой структуры
+		ourExpenses = new expenses1[amount + 1]; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	}
 	else
 	{
 
-		expenses1* tempObjEexpences = new expenses1[amount + 1];
+		expenses1* tempObjExpenses = new expenses1[amount + 1];
 		for (int i = 0; i < amount; i++)
 		{
-			tempObjEexpences[i] = ourExpenses[i];// копируем во временный объект 
+			tempObjExpenses[i] = ourExpenses[i];// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		}
 		delete[] ourExpenses;
 
-		ourExpenses = tempObjEexpences;
+		ourExpenses = tempObjExpenses;
 	}
 }
 
-void Expenses::addExpenses(int amount){// Добавление данных в объект структуры
+void Expenses::addExpenses(int amount){// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	int date;
 	int categories;
-	cout << "Месяц:" << endl;
-	cout << "1. Январь" << endl;
-	cout << "2. Февраль" << endl;
-	cout << "3. Март" << endl;
-	cout << "4. Апрель" << endl;
-	cout << "5. Май" << endl;
-	cout << "6. Июнь" << endl;
-	cout << "7. Июль" << endl;
-	cout << "8. Август" << endl;
-	cout << "9. Сентябрь" << endl;
-	cout << "10. Октябрь" << endl;
-	cout << "11. Ноябрь" << endl;
-	cout << "12. Декабрь" << endl;
-	cout << "Выберите месяц: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅ:" << endl;
+	cout << "1. пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "2. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "3. пїЅпїЅпїЅпїЅ" << endl;
+	cout << "4. пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "5. пїЅпїЅпїЅ" << endl;
+	cout << "6. пїЅпїЅпїЅпїЅ" << endl;
+	cout << "7. пїЅпїЅпїЅпїЅ" << endl;
+	cout << "8. пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "9. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "10. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "11. пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "12. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> date;
 	switch (date)
 	{
 	case 1:
 	{
-		ourExpenses[amount].data = "Январь";
+		ourExpenses[amount].data = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 2:
 	{
-		ourExpenses[amount].data = "Февраль";
+		ourExpenses[amount].data = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 3:
 	{
-		ourExpenses[amount].data = "Март";
+		ourExpenses[amount].data = "пїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 4:
 	{
-		ourExpenses[amount].data = "Апрель";
+		ourExpenses[amount].data = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 5:
 	{
-		ourExpenses[amount].data = "Май";
+		ourExpenses[amount].data = "пїЅпїЅпїЅ";
 		break;
 	}
 	case 6:
 	{
-		ourExpenses[amount].data = "Июнь";
+		ourExpenses[amount].data = "пїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 7:
 	{
-		ourExpenses[amount].data = "Июль";
+		ourExpenses[amount].data = "пїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 8:
 	{
-		ourExpenses[amount].data = "Август";
+		ourExpenses[amount].data = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 9:
 	{
-		ourExpenses[amount].data = "Сентябрь";
+		ourExpenses[amount].data = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 10:
 	{
-		ourExpenses[amount].data = "Октябрь";
+		ourExpenses[amount].data = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 11:
 	{
-		ourExpenses[amount].data = "Ноябрь";
+		ourExpenses[amount].data = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 12:
 	{
-		ourExpenses[amount].data = "Декабрь";
+		ourExpenses[amount].data = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	system("pause");
 	default:
-		cout << "Месяц не найден" << endl;
+		cout << "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 		return;
 		break;
 
 	}
 	cout << endl;
 
-	cout << "Введите получателя: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> ourExpenses[amount].recipient;
-	cout << "Введите сумму расхода: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> ourExpenses[amount].sum;
-	cout << "Выберите категорию: " << endl;
-	cout << "1. ЖКХ" << endl;
-	cout << "2. Налог на недвижимость" << endl;
-	cout << "3. Страховка" << endl;
-	cout << "4. Принадлежности" << endl;
-	cout << "5. Ремонт" << endl;
-	cout << "6. Реклама" << endl;
-	cout << "Введите номер категории: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " << endl;
+	cout << "1. пїЅпїЅпїЅ" << endl;
+	cout << "2. пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "3. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "4. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "5. пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "6. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> categories;
 
 	switch (categories)
 	{
 	case 1:
 	{
-		ourExpenses[amount].categories = "ЖКХ";
+		ourExpenses[amount].categories = "пїЅпїЅпїЅ";
 		break;
 	}
 	case 2:
 	{
-		ourExpenses[amount].categories = "Налог на недвижимость";
+		ourExpenses[amount].categories = "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 3:
 	{
-		ourExpenses[amount].categories = "Страховка";
+		ourExpenses[amount].categories = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 4:
 	{
-		ourExpenses[amount].categories = "Принадлежности";
+		ourExpenses[amount].categories = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 5:
 	{
-		ourExpenses[amount].categories = "Ремонт";
+		ourExpenses[amount].categories = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 6:
 	{
-		ourExpenses[amount].categories = "Реклама";
+		ourExpenses[amount].categories = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	system("pause");
 	default:
-		cout << "Категория не найдена" << endl;
+		cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 		break;
 
 	}
 }
 
-void Expenses::showExpences(int amount) // Вывод таблицы расходов
+void Expenses::showExpenses(int amount) // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
-	cout << setw(10) << "Месяц " << setw(25) << "Получатель" << setw(25) << "Сумма" << setw(25) << "Категории" << endl;
+	cout << setw(10) << "пїЅпїЅпїЅпїЅпїЅ " << setw(25) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << setw(25) << "пїЅпїЅпїЅпїЅпїЅ" << setw(25) << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 	cout << "--------------------------------------------------------------------------------------" << endl;
 	for (int i = 0; i < amount; i++)
 	{
@@ -236,141 +236,141 @@ void Expenses::showExpences(int amount) // Вывод таблицы расходов
 	}
 }
 
-void Expenses::purchase(Product& objectPr, int& amountPr, int amountEx) // Закупка товаров
+void Expenses::purchase(Product& objectPr, int& amountPr, int amountEx) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	string prodName;
 	int prodCount;
 	int date;
 	bool check = true;
-	cout << "Введите название товара: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> prodName;
 	for (int i = 0; i < amountPr; i++)
 	{
-		if (prodName == objectPr.ourProduct1[i].name) // Проверка, существует ли товар
+		if (prodName == objectPr.ourProduct1[i].name) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 		{
-			cout << "Введите количество: ";
+			cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ";
 			cin >> prodCount;
-			objectPr.ourProduct1[i].count = objectPr.ourProduct1[i].count + prodCount; // Добавляем количество товаров
+			objectPr.ourProduct1[i].count = objectPr.ourProduct1[i].count + prodCount; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			check = false;
 		}
 	}
-	if (check == true) // Если переменная cheсk = true, значит, что товара нет и мы создаем новый
+	if (check == true) // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ cheпїЅk = true, пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 	{
-		objectPr.addStructProd1(amountPr); // Выделение памяти под временный объект структуры
-		objectPr.addStruct(amountPr); // Выделение памяти под основной объект структуры
+		objectPr.addStructProd1(amountPr); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		objectPr.addStruct(amountPr); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		objectPr.ourProduct1[amountPr].name = prodName;
-		cout << "Введите количество: ";
+		cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ";
 		cin >> objectPr.ourProduct1[amountPr].count;
-		cout << "Введите цену товара для продажи: ";
+		cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ";
 		cin >> objectPr.ourProduct1[amountPr].price;
 		amountPr++;
 	}
 
-	cout << "Месяц:" << endl;
-	cout << "1. Январь" << endl;
-	cout << "2. Февраль" << endl;
-	cout << "3. Март" << endl;
-	cout << "4. Апрель" << endl;
-	cout << "5. Май" << endl;
-	cout << "6. Июнь" << endl;
-	cout << "7. Июль" << endl;
-	cout << "8. Август" << endl;
-	cout << "9. Сентябрь" << endl;
-	cout << "10. Октябрь" << endl;
-	cout << "11. Ноябрь" << endl;
-	cout << "12. Декабрь" << endl;
-	cout << "Выберите месяц: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅ:" << endl;
+	cout << "1. пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "2. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "3. пїЅпїЅпїЅпїЅ" << endl;
+	cout << "4. пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "5. пїЅпїЅпїЅ" << endl;
+	cout << "6. пїЅпїЅпїЅпїЅ" << endl;
+	cout << "7. пїЅпїЅпїЅпїЅ" << endl;
+	cout << "8. пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "9. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "10. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "11. пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "12. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> date;
 	switch (date)
 	{
 	case 1:
 	{
-		ourExpenses[amountEx].data = "Январь";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 2:
 	{
-		ourExpenses[amountEx].data = "Февраль";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 3:
 	{
-		ourExpenses[amountEx].data = "Март";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 4:
 	{
-		ourExpenses[amountEx].data = "Апрель";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 5:
 	{
-		ourExpenses[amountEx].data = "Май";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅ";
 		break;
 	}
 	case 6:
 	{
-		ourExpenses[amountEx].data = "Июнь";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 7:
 	{
-		ourExpenses[amountEx].data = "Июль";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 8:
 	{
-		ourExpenses[amountEx].data = "Август";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 9:
 	{
-		ourExpenses[amountEx].data = "Сентябрь";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 10:
 	{
-		ourExpenses[amountEx].data = "Октябрь";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 11:
 	{
-		ourExpenses[amountEx].data = "Ноябрь";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	case 12:
 	{
-		ourExpenses[amountEx].data = "Декабрь";
+		ourExpenses[amountEx].data = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		break;
 	}
 	system("pause");
 	default:
-		cout << "Месяц не найден" << endl;
+		cout << "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 		break;
 	}
 	cout << endl;
 
-	cout << "Введите получателя: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> ourExpenses[amountEx].recipient;
-	cout << "Введите сумму расхода: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> ourExpenses[amountEx].sum;
-	ourExpenses[amountEx].categories = "Закупки";
+	ourExpenses[amountEx].categories = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 
 }
-void Expenses::annualReport() // Вывод годового отчета
+void Expenses::annualReport() // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 {
-	cout << "Расход" << endl;
-	cout << "	ЖКХ: " << report.HCS << endl;
-	cout << "	Ремонт: " << report.repair << endl;
-	cout << "	Реклама: " << report.advert << endl;
-	cout << "	Страховка: " << report.unsurance << endl;
-	cout << "	Налог на недвижимость: " << report.tax << endl;
-	cout << "	Принадлежности: " << report.accessor << endl;
-	cout << "	Сумма: " << report.sumProd << endl;
-	cout << "Доход" << endl;
-	cout << "	Сумма: " << totalSum << endl;
-	cout << "Остатки" << endl;
-	cout << "	Сумма: " << leftovers << endl;
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "	пїЅпїЅпїЅ: " << report.HCS << endl;
+	cout << "	пїЅпїЅпїЅпїЅпїЅпїЅ: " << report.repair << endl;
+	cout << "	пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " << report.advert << endl;
+	cout << "	пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " << report.unsurance << endl;
+	cout << "	пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " << report.tax << endl;
+	cout << "	пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " << report.accessor << endl;
+	cout << "	пїЅпїЅпїЅпїЅпїЅ: " << report.sumProd << endl;
+	cout << "пїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "	пїЅпїЅпїЅпїЅпїЅ: " << totalSum << endl;
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
+	cout << "	пїЅпїЅпїЅпїЅпїЅ: " << leftovers << endl;
 
 }
 

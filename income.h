@@ -1,25 +1,25 @@
-// файл Income.h
+// пїЅпїЅпїЅпїЅ Income.h
 
 #ifndef __INCOME_H__
 #define __INCOME_H__
 #include "Struct.h"
-#include "Product.h"
+#include "product.h"
 
 using namespace std;
 
-class Income //доход
+class Income //пїЅпїЅпїЅпїЅпїЅ
 {
 	private:
-		income1* ourIncome; // Указатель на структуру доходы
-		int prodId; // id объекта дохода
+		income1* ourIncome; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+		int prodId; // id пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
 	public:
 		Income();
 		~Income();
-		void addIncome(Product&, int); // Создание объекта доходы
-		void addStructIncome(int); // Выделение памяти под объект дохода
-		void showIncome(); // Вывод таблицы доходов
-		void totalIncomeSum(); // Общая сумма доходов
+		void addIncome(Product&, int); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+		void addStructIncome(int); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+		void showIncome(); // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		void totalIncomeSum(); // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 };
 #endif

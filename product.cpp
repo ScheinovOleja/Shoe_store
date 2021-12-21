@@ -1,32 +1,32 @@
-#include "Product.h"
+#include "product.h"
 #include <iostream>
 #include "Struct.h"
 using namespace std;
 
-float leftovers; // переменная остатки
+float leftovers; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-Product::Product() // конструктор
+Product::Product() // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	ourProduct = 0;
 	prodId = 0;
 }
 
-Product::~Product() // деструктор
+Product::~Product() // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	delete[] ourProduct;
 }
 
-void Product::leftoversSum(int amount) // Сумма остатков товара
+void Product::leftoversSum(int amount) // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	leftovers = 0;
 	for (int i = 0; i < amount; i++)
 	{
-		leftovers = leftovers + (ourProduct[i].count * ourProduct[i].price); // суммирование остатков всех товаров
+		leftovers = leftovers + (ourProduct[i].count * ourProduct[i].price); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	}
 }
 
 
-void Product::copyProd(int amount) // Копирование данных основного объекта структуры во временный
+void Product::copyProd(int amount) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	ourProduct1 = new product1[amount];
 	for (int i = 0; i < amount; i++)
@@ -39,7 +39,7 @@ void Product::copyProd(int amount) // Копирование данных основного объекта струк
 	}
 }
 
-void Product::recopyProd(int amount) // Копируем измененные данные временного объекта структуры в основной объект структуры
+void Product::recopyProd(int amount) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	for (int i = 0; i < amount; i++)
 	{
@@ -52,11 +52,11 @@ void Product::recopyProd(int amount) // Копируем измененные данные временного об
 	delete[] ourProduct1;
 }
 
-void Product::addStructProd1(int amount) // Выделение памяти под временный объект структуры
+void Product::addStructProd1(int amount) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	if (amount == 0)
 	{
-		ourProduct1 = new product1[amount + 1]; // выделение памяти для первой структуры
+		ourProduct1 = new product1[amount + 1]; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		ourProduct1[amount].id = 0;
 	}
 	else
@@ -64,7 +64,7 @@ void Product::addStructProd1(int amount) // Выделение памяти под временный объек
 		product1* tempObjEx = new product1[amount + 1];
 		for (int i = 0; i < amount; i++)
 		{
-			tempObjEx[i] = ourProduct1[i]; // копируем во временный объект
+			tempObjEx[i] = ourProduct1[i]; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		}
 		delete[] ourProduct1;
 
@@ -75,11 +75,11 @@ void Product::addStructProd1(int amount) // Выделение памяти под временный объек
 	}
 }
 
-void Product::addStruct(int amount) // Выделение памяти под основной объект структуры
+void Product::addStruct(int amount) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	if (amount == 0)
 	{
-		ourProduct = new product1[amount + 1]; // выделение памяти для первой структуры
+		ourProduct = new product1[amount + 1]; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		ourProduct[amount].id = 0;
 	}
 	else
@@ -87,7 +87,7 @@ void Product::addStruct(int amount) // Выделение памяти под основной объект стру
 		product1* tempObj = new product1[amount + 1];
 		for (int i = 0; i < amount; i++)
 		{
-			tempObj[i] = ourProduct[i]; // копируем во временный объект
+			tempObj[i] = ourProduct[i]; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		}
 		delete[] ourProduct;
 
@@ -97,49 +97,49 @@ void Product::addStruct(int amount) // Выделение памяти под основной объект стру
 	}
 }
 
-void Product::addProduct(int amount) // Заполняем объект структуры
+void Product::addProduct(int amount) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
-	cout << "Введите название товара: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> ourProduct[amount].name;
 	cout << endl;
-	cout << "Введите количество товара: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> ourProduct[amount].count;
 	cout << endl;
-	cout << "Введите цену товара: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> ourProduct[amount].price;
 
 }
 
 
-void Product::showProd(int amount) // Вывод объектов структуры
+void Product::showProd(int amount) // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	for (int i = 0; i < amount; i++)
 	{
 		cout
 			<< "id " << ourProduct[i].id << '\n'
-			<< "Наименование товара: " << ourProduct[i].name << '\n'
-			<< "Количество товара: " << ourProduct[i].count << '\n'
-			<< "Цена товара: " << ourProduct[i].price << '\n'
+			<< "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " << ourProduct[i].name << '\n'
+			<< "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " << ourProduct[i].count << '\n'
+			<< "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " << ourProduct[i].price << '\n'
 			<< "=================================\n";
 	}
 }
 
-void Product::editProd(int amount) // Редактирование объета структуры
+void Product::editProd(int amount) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 	int id_editable, item;
 
 	cout << "|---------------------------|" << endl;
-	cout << "|Пункты редактирования:     |" << endl;
+	cout << "|пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ:     |" << endl;
 	cout << "|---------------------------|" << endl;
-	cout << "|1. Наименование            |" << endl;
+	cout << "|1. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ            |" << endl;
 	cout << "|---------------------------|" << endl;
-	cout << "|2. Количество              |" << endl;
+	cout << "|2. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ              |" << endl;
 	cout << "|---------------------------|" << endl;
-	cout << "|3. Цена                    |" << endl;
+	cout << "|3. пїЅпїЅпїЅпїЅ                    |" << endl;
 	cout << "|---------------------------|" << endl;
-	cout << "|0. Вернуться в меню        |" << endl;
+	cout << "|0. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ        |" << endl;
 	cout << "|---------------------------|" << endl;
-	cout << "Введите пункт, который хотите отредактировать у товара: ";
+	cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 	cin >> item;
 
 	system("cls");
@@ -151,23 +151,23 @@ void Product::editProd(int amount) // Редактирование объета структуры
 		string rename;
 		bool check = true;
 		showProd(amount);
-		cout << "Введите id товара: ";
+		cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ id пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 		cin >> id_editable;
 		cout << endl;
 		for (int i = 0; i < amount; i++)
 		{
-			if (id_editable == ourProduct[i].id) // Существует ли товар
+			if (id_editable == ourProduct[i].id) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 			{
-				cout << "Введите новое наименование товара: ";
+				cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 				cin >> rename;
 				ourProduct[i].name = rename;
-				cout << "Наименование изменено" << endl;
+				cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 				check = false;
 			}
 		}
 		if (check == true)
 		{
-			cout << "id не найден" << endl;
+			cout << "id пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 		}
 		break;
 	}
@@ -176,23 +176,23 @@ void Product::editProd(int amount) // Редактирование объета структуры
 		float recount;
 		bool check = true;
 		showProd(amount);
-		cout << "Введите id товара: ";
+		cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ id пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 		cin >> id_editable;
 		cout << endl;
 		for (int i = 0; i < amount; i++)
 		{
 			if (id_editable == ourProduct[i].id)
 			{
-				cout << "Введите новое количество товара: ";
+				cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 				cin >> recount;
 				ourProduct[i].count = recount;
-				cout << "Количество товара изменено" << endl;
+				cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 				check = false;
 			}
 		}
 		if (check == true)
 		{
-			cout << "id не найден" << endl;
+			cout << "id пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 		}
 		break;
 	}
@@ -201,30 +201,30 @@ void Product::editProd(int amount) // Редактирование объета структуры
 		float reprice;
 		bool check = true;
 		showProd(amount);
-		cout << "Введите id товара: ";
+		cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ id пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 		cin >> id_editable;
 		cout << endl;
 		for (int i = 0; i < amount; i++)
 		{
 			if (id_editable == ourProduct[i].id)
 			{
-				cout << "Введите новую цену товара: ";
+				cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ";
 				cin >> reprice;
 				ourProduct[i].price = reprice;
-				cout << "Цена товара изменена" << endl;
+				cout << "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 				check = false;
 			}
 		}
 		if (check == true)
 		{
-			cout << "id не найден" << endl;
+			cout << "id пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 		}
 		break;
 	}
 
 	system("pause");
 	default:
-		cout << "Такого действия не существует" << endl;
+		cout << "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 		break;
 	}
 
