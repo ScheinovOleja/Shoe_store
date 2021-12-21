@@ -5,21 +5,21 @@
 #include "Struct.h"
 #include "product.h"
 
-using namespace std;
-
-class Expenses // ������
+class Expenses // Расход
 {
 private:
-	expenses1* ourExpenses; // ��������� �� ��������� �������
+    expenses1 *ourExpenses; // Указатель на структуру расходы
 public:
-	Expenses();	// �����������
-	~Expenses(); // ����������
-	void addStructExpenses(int); // �������� ������ ��� ������ ��������� ������
-	void addExpenses(int); // ������� ������ ��������� ������
-	void showExpenses(int); // ����� ������� �������
-	void purchase(Product&, int&, int); // �������
-	void annualReport(); // ����� �������� ������
-	void dataReport(int); // ������������ ������ ��� �������� ������
+    Expenses();
+
+    ~Expenses();
+
+    void addStructExpenses(int); // Выделить память под объект структуры товара
+    void addExpenses(int); // Создать объект структуры товара
+    void showExpenses(int); // Вывод таблицы расходы
+    void purchase(Product &, int &, int); // Закупки
+    void annualReport(); // Вывод годового отчета
+    void dataReport(int); // Формирование данных для годового отчета
 };
 
 #endif
